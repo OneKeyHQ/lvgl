@@ -377,7 +377,7 @@ static void lv_keyboard_constructor(const lv_obj_class_t * class_p, lv_obj_t * o
 
     lv_keyboard_t * keyboard = (lv_keyboard_t *)obj;
     keyboard->ta         = NULL;
-    keyboard->mode       = LV_KEYBOARD_MODE_TEXT_LOWER;
+    keyboard->mode       = LV_KEYBOARD_MODE_USER_1;
     keyboard->popovers   = 0;
 
     lv_obj_align(obj, LV_ALIGN_BOTTOM_MID, 0, 0);
