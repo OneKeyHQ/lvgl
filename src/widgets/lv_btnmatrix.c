@@ -760,11 +760,16 @@ static void draw_main(lv_event_t * e)
             if(btn_area.y2 == obj->coords.y2 - pbottom) draw_rect_dsc_act.border_side &= ~LV_BORDER_SIDE_BOTTOM;
         }
 
-        lv_coord_t btn_height = lv_area_get_height(&btn_area);
+        // lv_coord_t btn_height = lv_area_get_height(&btn_area);
 
         if((btn_state & LV_STATE_PRESSED) && (btnm->ctrl_bits[btn_i] & LV_BTNMATRIX_CTRL_POPOVER)) {
             /*Push up the upper boundary of the btn area to create the popover*/
-            btn_area.y1 -= btn_height;
+            // btn_area.y1 -= btn_height;
+            /*expand around*/
+            btn_area.x1 -= 5;
+            btn_area.y1 -= 5;
+            btn_area.x2 += 5;
+            btn_area.y2 += 5;
         }
 
         /*Draw the background*/
@@ -793,11 +798,11 @@ static void draw_main(lv_event_t * e)
         btn_area.x2 = btn_area.x1 + txt_size.x;
         btn_area.y2 = btn_area.y1 + txt_size.y;
 
-        if((btn_state & LV_STATE_PRESSED) && (btnm->ctrl_bits[btn_i] & LV_BTNMATRIX_CTRL_POPOVER)) {
-            /*Push up the button text into the popover*/
-            btn_area.y1 -= btn_height / 2;
-            btn_area.y2 -= btn_height / 2;
-        }
+        // if((btn_state & LV_STATE_PRESSED) && (btnm->ctrl_bits[btn_i] & LV_BTNMATRIX_CTRL_POPOVER)) {
+        //     /*Push up the button text into the popover*/
+        //     btn_area.y1 -= btn_height / 2;
+        //     btn_area.y2 -= btn_height / 2;
+        // }
 
         /*Draw the text*/
         lv_draw_label(draw_ctx, &draw_label_dsc_act, &btn_area, txt, NULL);
