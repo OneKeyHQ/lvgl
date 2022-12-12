@@ -766,10 +766,10 @@ static void draw_main(lv_event_t * e)
             /*Push up the upper boundary of the btn area to create the popover*/
             // btn_area.y1 -= btn_height;
             /*expand around*/
-            btn_area.x1 -= 5;
-            btn_area.y1 -= 5;
-            btn_area.x2 += 5;
-            btn_area.y2 += 5;
+            btn_area.x1 += 2;
+            btn_area.y1 += 2;
+            btn_area.x2 -= 2;
+            btn_area.y2 -= 2;
         }
 
         /*Draw the background*/
