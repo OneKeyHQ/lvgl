@@ -8,6 +8,10 @@
 #include <string.h>
 #include <stdbool.h>
 
+#define lv_mem_alloc  lodepng_malloc
+#define lv_mem_realloc  lodepng_realloc
+#define lv_mem_free  lodepng_free
+
 #define MIN(A, B) ((A) < (B) ? (A) : (B))
 #define MAX(A, B) ((A) > (B) ? (A) : (B))
 
